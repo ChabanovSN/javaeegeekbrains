@@ -14,6 +14,6 @@ public class ProductServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        printPageHTML(req,resp,"Продукты");
+        req.getRequestDispatcher("WEB-INF/product.jsp").forward(req, resp);
     }
 }

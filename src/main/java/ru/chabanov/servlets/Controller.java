@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/","/main","/catalog"})
+@WebServlet(urlPatterns = "/")
 public class Controller extends HttpServlet {
     private static final Logger log = LoggerFactory.getLogger(Controller.class);
     @Override
@@ -24,15 +24,10 @@ public class Controller extends HttpServlet {
 
         response.setContentType("text/html;charset=UTF-8");
         String url = "WEB-INF/";
-        if (request.getServletPath().equals("/") || request.getServletPath().equals("/main")){
+        if (request.getServletPath().equals("/")){
             url +="index.jsp";
-        } else if (request.getServletPath().equals("/product")){
-            url+="product.jsp";
-        }else if (request.getServletPath().equals("/catalog")){
-            url+="catalog.jsp";
-        }else if (request.getServletPath().equals("/cart")){
-            url+="cart.jsp";
+            request.getRequestDispatcher(url).forward(request, response);
         }
-        request.getRequestDispatcher(url).forward(request, response);
+
     }
 }
