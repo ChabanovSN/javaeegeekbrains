@@ -1,0 +1,7 @@
+<%@ page pageEncoding="UTF-8" %>
+<nov>
+    <a href="main">Главная |</a>
+    <a href="main">Каталог |</a>
+    <a href="main">Карзина |</a>
+    <a href="main">Продукты |</a>
+</nov>
